@@ -1,0 +1,16 @@
+.home{
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.default{
+   width:200px;
+}
+
+.button{
+   background-color: black;
+   color: aliceblue;
+   width:100px;
+   cursor: pointer;
+}
