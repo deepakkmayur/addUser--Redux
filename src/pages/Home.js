@@ -1,23 +1,4 @@
-// import React, { useState } from 'react'
-// import {useDispatch} from "react-redux"
-// import * as userAction from '../store/action/user'
-// import './Home.css'
 
-// const Home = () => {     
-  
-//    const [user,setUser]=useState({id:"", username:"",password:""})
-   
-//    const inputHandler=(event)=>{
-//      const {name,value}=event.target   
-
-//      setUser((prevUser)=>{
-//        return {...prevUser,[name]:value}   
-//       })
-//     }
-    
-//     const dispatch=useDispatch()
-//     const addUser=()=>{
-//       dispatch(userAction.addUser(user))
 //     }
 
 import React, { useState } from "react"
@@ -36,10 +17,11 @@ const Home = () => {
   
   console.log(user,"===============home user 1");
   const inputHandler=(event)=>{
+    // console.log(event,"/////event/////");
      const {name,value}=event.target
-     console.log(name,value,"===========================home name,value");
+    //  console.log(name,value,"===========================home name,value");
      setUser((prevUser)=>{
-      console.log(prevUser,"=====================previous user");
+      // console.log(prevUser,"=====================previous user");
       return {...prevUser,[name]:value}       
      })
   }
@@ -57,7 +39,7 @@ const addUser=()=>{
       <h2>Add user</h2>
       
 
-      <input type="text" name='id' placeholder='id' className='default' onChange={inputHandler} value={user.id} />
+      <input type="text" name='id' placeholder='id' className='default' onChange={inputHandler}  />
       <input type="text" name='username' placeholder='Username'  className='default' onChange={inputHandler} value={user.username}/> 
       <input type="password" name='password' placeholder='password' className='default' onChange={inputHandler} value={user.password} />
       <button type="submit" className='button' onClick={addUser} >Submit</button>  

@@ -9,7 +9,7 @@ const Users = () => {
 const users=useSelector((state)=>{   
   console.log(state,">>>>>>>>>>state");   
   return state.users
-})
+})    
 console.log(users,"_______________________users");                    
  
 
@@ -21,11 +21,12 @@ dispatch(userAction.removeUser())
 
   return (
     <div>
-      <h1>{users.map((userDetails)=>{
-        console.log(userDetails,"-------------map userdetails--");
+      <h1>{users.length}</h1>         
+      {users.length!==0? users.map((userDetails)=>{
         return <UserData name={userDetails.username} id={userDetails.id} password={userDetails.password} key={userDetails.id}/>
-      })}</h1>
-      <button onClick={removeUsers}>Delete</button>
+      }):<h1>Users deleted</h1>}
+      
+      {users.length!==0 && <button onClick={removeUsers}>Delete</button>}
 
       </div>
   )

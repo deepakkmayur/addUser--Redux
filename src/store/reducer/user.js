@@ -12,11 +12,10 @@ console.log(initialState.users,"/////initialState.users");
 const userReducer=(state=initialState,action)=>{     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  switch(action.type){       
    case "ADD_USER" :
-      console.log("::::::::::::::::::::::::::");    
-      return {...state,users:[...state.users,action.user] }  
+      return {...state,users:[...state.users,action.user] }                 
       
    case "REMOVE_USER":
-      return {users:[0]}    
+      return {users:[]}    
       default:                                                                         
          return state                           
  }
